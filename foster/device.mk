@@ -137,7 +137,8 @@ PRODUCT_PACKAGES += \
     TvProvider \
     TvSettings \
     tv_input.default \
-    TV
+    TV \
+    LiveTv
 
 PRODUCT_PACKAGES += libhardware_legacy
 PRODUCT_PACKAGES += libwpa_client
@@ -168,9 +169,6 @@ PRODUCT_PACKAGES += \
     e2fsck \
     charger \
     charger_res_images
-
-# Widevine shim
-PRODUCT_PACKAGES += libwvm_shim
 
 # Radio Interface
 PRODUCT_PACKAGES += rild

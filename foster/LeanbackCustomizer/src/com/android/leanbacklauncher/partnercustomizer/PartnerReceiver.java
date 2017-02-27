@@ -63,7 +63,7 @@ public class PartnerReceiver extends BroadcastReceiver {
     private static final String PARTNER_GROUP = "partner_row_entry";
     private static final String BLACKLIST_PACKAGE = "com.google.android.leanbacklauncher.replacespackage";
 
-    private static final String PLAY_MOVIES_PKG_NAME = "com.google.android.videos";
+    private static final String LIVE_TV_PKG_NAME = "com.android.tv";
 
     private Context mContext;
     private NotificationManager mNotifMan;
@@ -89,7 +89,7 @@ public class PartnerReceiver extends BroadcastReceiver {
             postNotification(getPackageName(intent));
         } else if (ACTION_PARTNER_CUSTOMIZATION.equals(action)) {
             mRowCutoff = intent.getIntExtra(EXTRA_ROW_WRAPPING_CUTOFF, 0);
-            postNotification(PLAY_MOVIES_PKG_NAME);
+            postNotification(LIVE_TV_PKG_NAME);
         }
     }
 
@@ -101,12 +101,12 @@ public class PartnerReceiver extends BroadcastReceiver {
         int backupTitleId;
 
         switch (pkgName) {
-            case PLAY_MOVIES_PKG_NAME:
+            case LIVE_TV_PKG_NAME:
                 sort = 1;
-                resId = R.drawable.ic_play_movies_banner;
-                backupResId = R.drawable.ic_try_play_movies_banner;
-                titleId = R.string.play_movies;
-                backupTitleId = R.string.try_play_movies;
+                resId = R.drawable.ic_tv_banner;
+                backupResId = R.drawable.ic_try_tv_banner;
+                titleId = R.string.live_tv;
+                backupTitleId = R.string.try_live_tv;
                 break;
             default:
                 return;
